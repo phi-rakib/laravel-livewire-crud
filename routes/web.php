@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\StudentList;
+use App\Http\Livewire\Student\StudentList;
 use Illuminate\Support\Facades\Route;
 
 /*
