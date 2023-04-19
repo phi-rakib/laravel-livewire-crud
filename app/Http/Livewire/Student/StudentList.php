@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Student;
 
 use App\Models\Student;
 use Livewire\Component;
@@ -12,7 +12,7 @@ class StudentList extends Component
 
     public function render()
     {
-        return view('livewire.student-list', [
+        return view('livewire.student.student-list', [
             'students' => Student::latest()->paginate(5)
         ]);
     }
