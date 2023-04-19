@@ -4,15 +4,16 @@ namespace App\Http\Livewire;
 
 use App\Models\Student;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class StudentList extends Component
 {
-    public $students;
+    use WithPagination;
 
     public function render()
     {
-        $this->students = Student::latest()->get();
-
-        return view('livewire.student-list');
+        return view('livewire.student-list', [
+            'students' => Student::latest()->paginate(5)
+        ]);
     }
 }
