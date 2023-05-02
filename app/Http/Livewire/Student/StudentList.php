@@ -10,6 +10,8 @@ class StudentList extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     public function render()
     {
         return view('livewire.student.student-list', [
