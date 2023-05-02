@@ -16,9 +16,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($students as $index => $student)
+                        @php
+                            $i = ($students->perPage() * ($students->currentPage() - 1)) + 1
+                        @endphp
+                        @foreach ($students as $student)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $i++ }}</td>
                                 <td>{{ $student->name }}</td>
                                 <td>{{ $student->email }}</td>
                                 <td>{{ $student->department }}</td>
