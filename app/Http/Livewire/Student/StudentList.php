@@ -12,10 +12,12 @@ class StudentList extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    private $perPage = 10;
+
     public function render()
     {
         return view('livewire.student.student-list', [
-            'students' => Student::latest()->paginate(5)
+            'students' => Student::latest()->paginate($this->perPage)
         ]);
     }
 }
