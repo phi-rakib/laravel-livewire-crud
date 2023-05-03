@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('students', StudentList::class)->middleware('auth');
+Route::get('students', StudentList::class)->middleware('auth')->name('students');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
